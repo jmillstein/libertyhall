@@ -1,0 +1,64 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text_field": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Liberty Hall is... ",
+							"spans": [
+								{
+									"type": "em",
+									"start": 0,
+									"end": 19
+								},
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 19
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"liberty_hall": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1542665952-14513db15293?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxsaWJlcnR5JTIwaGFsbHxlbnwwfHx8fDE3Mjc5OTgzMTF8MA&ixlib=rb-4.0.3&q=85",
+				"alt": "libertyhall",
+				"origin": {
+					"id": "XYuNwlYtfLI",
+					"url": "https://images.unsplash.com/photo-1542665952-14513db15293?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxsaWJlcnR5JTIwaGFsbHxlbnwwfHx8fDE3Mjc5OTgzMTF8MA&ixlib=rb-4.0.3&q=85",
+					"width": 6720,
+					"height": 4480
+				},
+				"width": 6720,
+				"height": 4480,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"location": {
+				"__TYPE__": "GeoPointContent",
+				"position": {
+					"lat": 48.8583736,
+					"lng": 2.2922926
+				}
+			}
+		},
+		"items": []
+	}
+]
