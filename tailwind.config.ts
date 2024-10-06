@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ["var(--font-nunito)"],
+        nunitoSans: ["var(--font-nunito-sans)"],
+        geistSans: ["var(--font-geist-sans)"],
+        geistMono: ["var(--font-geist-mono)"]
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
