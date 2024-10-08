@@ -1,20 +1,23 @@
 {
   "format": "page",
-  "id": "home",
-  "label": "Home",
+  "id": "homepage",
+  "label": "Homepage",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "text_slice": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },
@@ -43,10 +46,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      },
-      "slices1": {
-        "type": "Slices",
-        "fieldset": "Slice Zone"
       }
     }
   }
