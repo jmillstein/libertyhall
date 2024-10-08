@@ -172,71 +172,6 @@ export type SettingsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
-/**
- * Primary content in *TextSlice → Default → Primary*
- */
-export interface TextSliceSliceDefaultPrimary {
-  /**
-   * Liberty Hall field in *TextSlice → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_slice.default.primary.liberty_hall
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  liberty_hall: prismic.ImageField<never>;
-
-  /**
-   * Text Field field in *TextSlice → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_slice.default.primary.text_field
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text_field: prismic.RichTextField;
-
-  /**
-   * location field in *TextSlice → Default → Primary*
-   *
-   * - **Field Type**: GeoPoint
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_slice.default.primary.location
-   * - **Documentation**: https://prismic.io/docs/field#geopoint
-   */
-  location: prismic.GeoPointField;
-}
-
-/**
- * Default variation for TextSlice Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSliceSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TextSliceSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *TextSlice*
- */
-type TextSliceSliceVariation = TextSliceSliceDefault;
-
-/**
- * TextSlice Shared Slice
- *
- * - **API ID**: `text_slice`
- * - **Description**: TextSlice
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSliceSlice = prismic.SharedSlice<
-  "text_slice",
-  TextSliceSliceVariation
->;
-
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -265,10 +200,6 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
-      TextSliceSlice,
-      TextSliceSliceDefaultPrimary,
-      TextSliceSliceVariation,
-      TextSliceSliceDefault,
     };
   }
 }

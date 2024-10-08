@@ -2,6 +2,4 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {
-  text_slice: dynamic(() => import("./TextSlice")),
-};
+export const components = {};
