@@ -173,6 +173,66 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
+ * Item in *Features → Default → Primary → Icons*
+ */
+export interface FeaturesSliceDefaultPrimaryIconsItem {}
+
+/**
+ * Primary content in *Features → Default → Primary*
+ */
+export interface FeaturesSliceDefaultPrimary {
+  /**
+   * Heading field in *Features → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Icons field in *Features → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.icons[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  icons: prismic.GroupField<Simplify<FeaturesSliceDefaultPrimaryIconsItem>>;
+}
+
+/**
+ * Default variation for Features Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Features*
+ */
+type FeaturesSliceVariation = FeaturesSliceDefault;
+
+/**
+ * Features Shared Slice
+ *
+ * - **API ID**: `features`
+ * - **Description**: Features
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSlice = prismic.SharedSlice<
+  "features",
+  FeaturesSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -350,6 +410,11 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      FeaturesSlice,
+      FeaturesSliceDefaultPrimaryIconsItem,
+      FeaturesSliceDefaultPrimary,
+      FeaturesSliceVariation,
+      FeaturesSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceHorizontalPrimary,
