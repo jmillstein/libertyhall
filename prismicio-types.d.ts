@@ -173,9 +173,39 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
- * Item in *Features → Default → Primary → Icons*
+ * Item in *Features → Default → Primary → Feature*
  */
-export interface FeaturesSliceDefaultPrimaryIconsItem {}
+export interface FeaturesSliceDefaultPrimaryFeatureItem {
+  /**
+   * icon field in *Features → Default → Primary → Feature*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.feature[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<"calendar" | "bargraph" | "clover" | "hourglass">;
+
+  /**
+   * title field in *Features → Default → Primary → Feature*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.feature[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Features → Default → Primary → Feature*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.feature[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
 
 /**
  * Primary content in *Features → Default → Primary*
@@ -192,14 +222,14 @@ export interface FeaturesSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
-   * Icons field in *Features → Default → Primary*
+   * Feature field in *Features → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: features.default.primary.icons[]
+   * - **API ID Path**: features.default.primary.feature[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  icons: prismic.GroupField<Simplify<FeaturesSliceDefaultPrimaryIconsItem>>;
+  feature: prismic.GroupField<Simplify<FeaturesSliceDefaultPrimaryFeatureItem>>;
 }
 
 /**
@@ -411,7 +441,7 @@ declare module "@prismicio/client" {
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
       FeaturesSlice,
-      FeaturesSliceDefaultPrimaryIconsItem,
+      FeaturesSliceDefaultPrimaryFeatureItem,
       FeaturesSliceDefaultPrimary,
       FeaturesSliceVariation,
       FeaturesSliceDefault,

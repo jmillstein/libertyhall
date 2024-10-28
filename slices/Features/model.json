@@ -21,12 +21,44 @@
             "multi": "heading2"
           }
         },
-        "icons": {
+        "feature": {
           "type": "Group",
           "config": {
-            "label": "Icons",
+            "label": "Feature",
             "repeat": true,
-            "fields": {}
+            "fields": {
+              "icon": {
+                "type": "Select",
+                "config": {
+                  "label": "icon",
+                  "placeholder": "",
+                  "options": [
+                    "calendar",
+                    "bargraph",
+                    "clover",
+                    "hourglass"
+                  ]
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
+                }
+              }
+            }
           }
         }
       },

@@ -15,7 +15,7 @@ import Bounded from "@/components/Bounded";
         <Link href="/"> 
           <Logo /> 
         </Link>
-        <p className="text-sm">©{new Date().getFullYear()} {settings.data.site_title}</p>
+        <p className="text-xm">©{new Date().getFullYear()} {settings.data.site_title}</p>
             <ul className="flex">
                 {settings.data.navigation.map(({link, label}) => (
                     <li key={label}>
