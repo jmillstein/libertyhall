@@ -3,7 +3,7 @@ import { PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next";
 
 export default function Button({
     className,
-    ...restProps
+    field
 }: PrismicNextLinkProps) {
     return(
         <PrismicNextLink 
